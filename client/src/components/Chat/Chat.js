@@ -14,6 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import './Chat.css';
+import Bc3 from "../../images/Bc3.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -93,7 +94,7 @@ const Chat = ({ location,props }) => {
   }
 
   return (
-    <div>
+    <div style={{ backgroundImage: "url(" + Bc3 + ")" }}>
     <div className={classes.root}>
             <AppBar position="static" >
                 <Toolbar>

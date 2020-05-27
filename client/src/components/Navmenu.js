@@ -13,6 +13,12 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Tooltip from '@material-ui/core/Tooltip';
+import Facebook from "../icons/Facebook.png";
+import Instagram from "../icons/Instagram.png";
+import Twitter from "../icons/Twitter.png";
+import snapchat from "../icons/snapchat.png";
+import Bc from "../images/Bc.png";
+import "../App.css";
 
 
 
@@ -38,7 +44,8 @@ function NavbarM(props) {
     const classes = useStyles();
 
     return (
-        <div>
+        <div style={{ backgroundImage: "url(" + Bc + ")" }}>
+
             <div className={classes.root}>
                 <AppBar position="static" >
                     <Toolbar>
@@ -70,14 +77,14 @@ function NavbarM(props) {
                     </Toolbar>
                 </AppBar>
             </div>
-            <div style={{ display: "flex", margin:"20px", padding:"10px" }}>
+            <div style={{ display: "flex", marginLeft:"-7px" }}>
                 <div>
-                    <Card className={classes.root}>
-                        <CardActionArea>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
+                        <CardActionArea >
                             <CardMedia
                                 className={classes.media}
                                 image="https://storenotrefamilleprod.blob.core.windows.net/images/cms/recette/12592/12592_large.jpg"
-                                title="Vegetarian spinach lasagna" />
+                                title="Vegetarian spinach lasagna"   />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
                                     Recipe 1
@@ -94,7 +101,7 @@ function NavbarM(props) {
                             </Link>
                         </CardActions>
                     </Card>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
                         <CardActionArea>
                             <CardMedia
                                 className={classes.media}
@@ -105,7 +112,7 @@ function NavbarM(props) {
                                     Recipe 2
           </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                            The real recipe for Thai soup, like at a restaurant. You will find all the Asian ingredients
+                                    The real recipe for Thai soup, like at a restaurant. You will find all the Asian ingredients
           </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -116,7 +123,7 @@ function NavbarM(props) {
                             </Link>
                         </CardActions>
                     </Card>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
                         <CardActionArea>
                             <CardMedia
                                 className={classes.media}
@@ -140,7 +147,7 @@ function NavbarM(props) {
                     </Card>
                 </div>
                 <div>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
                         <CardActionArea>
                             <CardMedia
                                 className={classes.media}
@@ -162,7 +169,7 @@ function NavbarM(props) {
                             </Link>
                         </CardActions>
                     </Card>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
                         <CardActionArea>
                             <CardMedia
                                 className={classes.media}
@@ -184,7 +191,7 @@ function NavbarM(props) {
                             </Link>
                         </CardActions>
                     </Card>
-                    <Card className={classes.root}>
+                    <Card className={classes.root} style={{  margin: "15px" }}>
                         <CardActionArea>
                             <CardMedia
                                 className={classes.media}
@@ -208,8 +215,40 @@ function NavbarM(props) {
                     </Card>
                 </div>
             </div>
-            <Tooltip style={{ textAlign: "center" }}>
-                <Typography variant="body2" color="textSecondary" component="p" >
+            <div style={{ display: "flex" }}>
+                <Tooltip style={{ textAlign: "left" }}>
+
+                    <Typography color="white" style={{ display: "flex", margin: "20px", padding: "10px", color: "white" }} >
+                        Mission:<br />
+This recipe sharing site was born from the pleasure of sharing a good meal<br /> in good company.
+With friends, family or for special occasions the exchange of recipes<br /> is now made easier
+thanks to this site designed for us.<br />
+                        <br />Write for us : recipes.and.stories@gmail.com
+          </Typography>
+                </Tooltip>
+                <Tooltip style={{}}>
+
+                    <Typography color="white" style={{ margin: "20px", padding: "50px" }} >
+                        <div className="iconfb">
+                            <Link href="https://www.facebook.com/">
+                                <img src={Facebook} alt="" width="40px" height="40px" style={{ margin: "30px"}}/>
+                            </Link>
+                            <Link href="https://www.Instagram.com/">
+                                <img src={Instagram} alt="" width="40px" height="40px" style={{ margin: "30px" }}/>
+                            </Link>
+                            <Link href="https://www.Twitter.com/">
+                                <img src={Twitter} alt="" width="40px" height="40px" style={{ margin: "30px" }} />
+                            </Link>
+                            <Link href="https://www.snapchat.com/">
+                                <img src={snapchat} alt="" width="40px" height="40px" style={{ margin: "30px" }} />
+                            </Link>
+                        </div>
+                    </Typography>
+                </Tooltip>
+            </div>
+            <Tooltip style={{ textAlign: "center", color: "white" }}>
+
+                <Typography color="white" >
                     Recipes And Stories.  Copyright ©  2020
           </Typography>
             </Tooltip>

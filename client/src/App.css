@@ -1,4 +1,13 @@
+.iconfb{
+    display: flex;
+    justify-content: space-between;
+}
 
+.homebar{
+    height: 100px;
+    margin-top: -18px;
+    
+}
 
 
 

@@ -8,40 +8,41 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import './Join.css';
+import Bc3 from "../../images/Bc3.jpg"
 
 
 
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
-  image: {
-    backgroundImage: 'url(https://source.unsplash.com/random/?food,healthy,breakfast)',
-    backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  },
-  paper: {
-    margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%',
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+  // root: {
+  //   height: '100vh',
+  // },
+  // image: {
+  //   backgroundImage: 'url(https://source.unsplash.com/random/?food,healthy,breakfast)',
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundColor:
+  //     theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+  //   backgroundSize: 'cover',
+  //   backgroundPosition: 'center',
+  // },
+  // paper: {
+  //   margin: theme.spacing(8, 4),
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center',
+  // },
+  // avatar: {
+  //   margin: theme.spacing(1),
+  //   backgroundColor: theme.palette.secondary.main,
+  // },
+  // form: {
+  //   width: '100%',
+  //   marginTop: theme.spacing(1),
+  // },
+  // submit: {
+  //   margin: theme.spacing(3, 0, 2),
+  // },
 }));
 
 
@@ -51,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
   const [room, setRoom] = useState('');
 
   return (
-    <div>
-    <div className={classes.root}>
+    <div style={{ backgroundImage: "url(" + Bc3 + ")" }}>
+    <div className={classes.root} >
             <AppBar position="static" >
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -62,12 +63,12 @@ const useStyles = makeStyles((theme) => ({
                     <Typography variant="h6" className={classes.title}>
                         Recipes And Stories
           </Typography>
-                    <Typography variant="h6" className={classes.title} style={{marginLeft:"250px"}}>
+                    <Typography variant="h6" className={classes.title} style={{marginLeft:"200px"}}>
                         "People who like to eat ... are always the best."
           </Typography>
                     <div>
                         {localStorage.getItem("token") !== null ? (
-                            <Button onClick={() => { localStorage.removeItem("token"); props.history.push("/signin"); }} variant="contained" color="primary" style={{marginLeft:"250px"}}>Logout</Button>
+                            <Button onClick={() => { localStorage.removeItem("token"); props.history.push("/signin"); }} variant="contained" color="primary" style={{marginLeft:"200px"}}>Logout</Button>
                         ) : (
                                 <div>
                                     <Link to="/signin">
