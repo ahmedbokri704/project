@@ -32,7 +32,43 @@ router.get("/" ,(req, res) => {
     .then((users) => res.json(users))
     .catch((err) => console.error(err));
 });
+//put enable and disable activate : 
+router.put("/disable/:_id",(req, res, next) => {
+  const { _id } = req.params;
 
+
+  // console.log(response)
+
+  User.findOneAndUpdate(
+    { _id },
+    {
+      $set: {
+        activate: false
+      },
+    }
+  ).then(user=>res.json(user))
+  .catch(err=> console.log(err))
+    
+  
+});
+router.put("/enable/:_id",(req, res, next) => {
+  const { _id } = req.params;
+
+
+  // console.log(response)
+
+  User.findOneAndUpdate(
+    { _id },
+    {
+      $set: {
+        activate: true
+      },
+    }
+  ).then(user=>res.json(user))
+  .catch(err=> console.log(err))
+    
+  
+});
 // @route  GET api/users
 // @desc   Get one User
 // @access Public
@@ -49,7 +85,7 @@ router.get("/:id", (req, res) => {
 // @access Public
 
 router.post("/", ValidationInputsRules(), ValidatorErrorsHandle, (req, res) => {
-  const { email, password } = req.body;
+  const { email, password ,activate,role} = req.body;
 
   // Test if user exist Already
   User.findOne({ email }).then((user) => {
@@ -58,6 +94,8 @@ router.post("/", ValidationInputsRules(), ValidatorErrorsHandle, (req, res) => {
       const newUser = new User({
         email,
         password,
+        activate,
+        role
       });
       // newUser
       //       .save()
@@ -92,7 +130,7 @@ router.post("/login", (req, res) => {
         .compare(password, user.password)
         .then((isMatched) => {
           if (isMatched) {
-            const payload = { id: user._id, email: user.email };
+            const payload = { id: user._id, email: user.email,activate:user.activate,role:user.role };
             jwt.sign(payload, "ok", { expiresIn: 3600 }, (err, token) => {
               if (err) res.sendStatus(500);
               else res.json({ token: "Bearer " + token });

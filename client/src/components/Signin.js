@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
 function Add(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [msg,setMsg]  = useState("")
 
   const login = () => {
     axios
@@ -77,9 +78,20 @@ function Add(props) {
         localStorage.setItem("token", res.data.token);
         var decoded = jwt_decode(res.data.token);
         localStorage.setItem("iduser", decoded.id);
-        console.log(res.data.token)
-        props.history.push("/dashboard");
+        if(decoded.activate === true)  
+        {
+          if(decoded.role==="admin")
+         props.history.push("/admin")
+         else 
+         props.history.push("/dashboard") 
+        }
+        else 
+        setMsg("the user is desactivate for the momment");
+
+        
       })
+     
+       
       .catch((err) => {
         alert("** Please verify your login & password !!!");
         setPassword("");
@@ -162,7 +174,7 @@ function Add(props) {
             >
               Sign In
             </Button>
-
+            {msg}
             <Box mt={5}>
               <Copyright />
             </Box>

@@ -23,6 +23,17 @@ const UserSchema = new Schema({
     type:String,
     
   },
+   activate:{
+    type:Boolean,
+    required:false,
+    default:true
+    
+  },
+  role:{
+    type:String,
+    required:false
+    
+  }
   
 });
 

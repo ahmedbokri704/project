@@ -72,10 +72,12 @@ function Add(props) {
       .post("http://localhost:7000/api/users/", {
         email: email,
         password: password,
+        activate:true,
+        role:"user"
       })
       .then((response) => {
         console.log("the status is:", response.status);
-        if (response.status === 200) props.history.push("/login");
+        if (response.status === 200) props.history.push("/signin");
       })
       .catch((err) => {
         alert("User Already exists !!!");

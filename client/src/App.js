@@ -7,6 +7,7 @@ import NavbarM from "./components/Navmenu";
 import Post from "./components/post";
 import Chat from './components/Chat/Chat';
 import Join from './components/Join/Join';
+import Admin from "./components/Admin/Admin"
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           </Route>
           <Route path="/home" exact component={Join} />
           <Route path="/chat" component={Chat} />
+          <Route path="/admin" component={Admin} />
         </Switch>
       </BrowserRouter>
     </div>
