@@ -8,6 +8,7 @@ import Post from "./components/post";
 import Chat from './components/Chat/Chat';
 import Join from './components/Join/Join';
 import Admin from "./components/Admin/Admin"
+import SharedPost from "./components/sharedPosts/SharedPost"
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/home" exact component={Join} />
           <Route path="/chat" component={Chat} />
           <Route path="/admin" component={Admin} />
+          <Route exact path="/listusers" component={SharedPost} />
         </Switch>
       </BrowserRouter>
     </div>
